@@ -23,6 +23,7 @@ export default function Contact() {
     const url =
       "https://0rv13tkjb6.execute-api.us-west-2.amazonaws.com/api/contact";
     fetch(url, requestOptions)
+    console.log("** Fetch Called **");
       .then(async (response) => {
         const data = await response.json();
         if (!response.ok) {
@@ -30,11 +31,11 @@ export default function Contact() {
           console.log(`Error 1: ${error}`);
           return Promise.reject(error);
         } else {
-          console.log(response);
+          console.log(`Response: ${response)}`;
         }
       })
       .catch((err) => {
-        console.log(`There was an Error!, ${err}`);
+        console.error(err);
       });
 
     console.log("Submitted");
@@ -46,7 +47,9 @@ export default function Contact() {
       e.stopPropagation();
     } else {
       setValidated(true);
+      console.log("Form Validated True");
       handlePost();
+      console.log("handlePost() Called");
     }
   };
   const contactVariants = {
