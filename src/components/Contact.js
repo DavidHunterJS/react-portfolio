@@ -5,7 +5,39 @@ import { motion } from "framer-motion";
 
 export default function Contact() {
   const [validated, setValidated] = useState(false);
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
 
+  const handlePost = () => {
+    const payload = {
+      email: email,
+      message: message,
+    };
+    const requestOptions = {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(payload),
+    };
+    const url = "https://jqubd9288d.execute-api.us-west-2.amazonaws.com/01/";
+    fetch(url, requestOptions)
+      .then(async (response) => {
+        const data = await response.json();
+        if (!response.ok) {
+          const error = (data && data.message) || response.status;
+          console.log(`Error 1: ${error}`);
+          return Promise.reject(error);
+        } else {
+          console.log(response);
+        }
+      })
+      .catch((err) => {
+        console.log(`There was an Error!, ${err}`);
+      });
+
+    console.log("Submitted");
+  };
   const handleSubmit = (e) => {
     e.preventDefault();
     const form = e.currentTarget;
@@ -13,10 +45,9 @@ export default function Contact() {
       e.stopPropagation();
     } else {
       setValidated(true);
-      console.log("Submitted");
+      handlePost();
     }
   };
-
   const contactVariants = {
     initial: { y: "-100vh" },
     animate: {
@@ -68,6 +99,9 @@ export default function Contact() {
             <Form.Group controlId="formBasicEmail">
               <Form.Label srOnly>Your email address</Form.Label>
               <Form.Control
+                name="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
                 required
                 type="email"
                 placeholder="Your email address"
@@ -79,8 +113,11 @@ export default function Contact() {
             </Form.Group>
 
             <Form.Group controlId="formBasicTextarea">
-              <Form.Label srOnly>Password</Form.Label>
+              <Form.Label srOnly>Readable text</Form.Label>
               <Form.Control
+                name="message"
+                value={message}
+                onChange={(e) => setMessage(e.target.value)}
                 as="textarea"
                 rows={3}
                 required
