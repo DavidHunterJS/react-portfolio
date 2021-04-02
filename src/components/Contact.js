@@ -23,15 +23,15 @@ export default function Contact() {
     const url =
       "https://0rv13tkjb6.execute-api.us-west-2.amazonaws.com/api/contact";
     fetch(url, requestOptions)
-    console.log("** Fetch Called **");
       .then(async (response) => {
+        console.log(" Fetch Called ");
         const data = await response.json();
         if (!response.ok) {
           const error = (data && data.message) || response.status;
           console.log(`Error 1: ${error}`);
           return Promise.reject(error);
         } else {
-          console.log(`Response: ${response)}`;
+          console.log(`Response: ${data}`);
         }
       })
       .catch((err) => {
