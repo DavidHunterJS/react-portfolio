@@ -86,7 +86,6 @@ export default function Contact() {
           <Form
             noValidate
             validated={validated}
-            onSubmit={(e) => handleSubmit(e)}
             className="p-3"
             variants={childVariants}
           >
@@ -133,7 +132,12 @@ export default function Contact() {
                 Please type a message.
               </Form.Control.Feedback>
             </Form.Group>
-            <Button variant="primary" type="submit" variants={childVariants}>
+            <Button
+              variant="primary"
+              type="submit"
+              variants={childVariants}
+              onClick={(e) => handleSubmit(e)}
+            >
               Submit
             </Button>
           </Form>
