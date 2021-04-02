@@ -5,13 +5,16 @@ import { motion } from "framer-motion";
 
 export default function Contact() {
   const [validated, setValidated] = useState(false);
+
   const handleSubmit = (e) => {
     const form = e.currentTarget;
     if (form.checkValidity() === false) {
       e.preventDefault();
       e.stopPropagation();
+    } else {
+      e.preventDefault();
+      setValidated(true);
     }
-    setValidated(true);
   };
 
   const contactVariants = {
