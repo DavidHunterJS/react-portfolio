@@ -20,7 +20,8 @@ export default function Contact() {
       },
       body: JSON.stringify(payload),
     };
-    const url = "https://jqubd9288d.execute-api.us-west-2.amazonaws.com/01/";
+    const url =
+      "https://0rv13tkjb6.execute-api.us-west-2.amazonaws.com/api/contact";
     fetch(url, requestOptions)
       .then(async (response) => {
         const data = await response.json();
