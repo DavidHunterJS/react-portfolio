@@ -7,13 +7,13 @@ export default function Contact() {
   const [validated, setValidated] = useState(false);
 
   const handleSubmit = (e) => {
+    e.preventDefault();
     const form = e.currentTarget;
     if (form.checkValidity() === false) {
-      e.preventDefault();
       e.stopPropagation();
     } else {
-      e.preventDefault();
       setValidated(true);
+      console.log("Submitted");
     }
   };
 
