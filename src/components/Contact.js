@@ -79,10 +79,10 @@ export default function Contact() {
           exit="exit"
         >
           <Form
+            onSubmit={(e) => handleSubmit(e)}
             noValidate
             validated={validated}
             className="p-3"
-            onSubmit={(e) => handleSubmit(e)}
           >
             <Form.Text>
               <h2>Get in Touch</h2>
