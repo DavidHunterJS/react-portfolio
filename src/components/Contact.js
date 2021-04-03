@@ -68,12 +68,7 @@ export default function Contact() {
       transition: { type: "spring", when: "afterChildren" },
     },
   };
-  const childVariants = {
-    initial: { y: "-100vh" },
-    animate: {
-      y: 0,
-    },
-  };
+
   return (
     <div className="image-container no-animation">
       <div className="static-bg overlay contact">
@@ -83,17 +78,12 @@ export default function Contact() {
           animate="animate"
           exit="exit"
         >
-          <Form
-            noValidate
-            validated={validated}
-            className="p-3"
-            variants={childVariants}
-          >
+          <Form noValidate validated={validated} className="p-3">
             <Form.Text>
-              <h2 variants={childVariants}>Get in Touch</h2>
+              <h2>Get in Touch</h2>
             </Form.Text>
             <Form.Text>
-              <p variants={childVariants}>
+              <p>
                 Please fill out the quick form and I&apos;ll get back to you
                 with lightning speed
               </p>
@@ -132,12 +122,7 @@ export default function Contact() {
                 Please type a message.
               </Form.Control.Feedback>
             </Form.Group>
-            <Button
-              variant="primary"
-              type="submit"
-              variants={childVariants}
-              onClick={(e) => handleSubmit(e)}
-            >
+            <Button variant="primary" onClick={(e) => handleSubmit(e)}>
               Submit
             </Button>
           </Form>
