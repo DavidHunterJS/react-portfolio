@@ -1,5 +1,5 @@
 import currencies from "./img/currency2.jpg";
-import utorrent from "./img/utorrent3.webp";
+import utorrent from "./img/utorrent3.png";
 import journeys from "./img/journeys.png";
 export const projectsData = [
   {
