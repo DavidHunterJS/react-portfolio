@@ -128,10 +128,11 @@ a.resume-cta {
   height: 100vh;  
 }
 .projects-header {
-  margin-top: 10vh;
+  margin-top: 13vh;
   flex: 0 0 100%;
   text-align: center;
   color: #fff;
+  margin-bottom: -4vh;
 }
 @media screen and (max-width: 768px ) {
   .projects-header {
