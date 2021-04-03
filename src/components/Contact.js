@@ -93,7 +93,6 @@ export default function Contact() {
                 with lightning speed
               </p>
             </Form.Text>
-
             <Form.Group controlId="formBasicEmail">
               <Form.Label srOnly>Your email address</Form.Label>
               <Form.Control
