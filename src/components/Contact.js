@@ -60,7 +60,7 @@ export default function Contact() {
     },
     exit: {
       y: "-100vh",
-      transition: { type: "spring", when: "afterChildren" },
+      transition: { type: "spring" },
     },
   };
 

@@ -11,6 +11,7 @@ export default function Projects() {
         damping: 15,
         mass: 2,
       },
+      whileHover: { scale: 1.1 },
     },
     exit: {
       y: "100vh",
@@ -41,7 +42,7 @@ export default function Projects() {
           animate="show"
           exit="exit"
         >
-          <ProjectDetail />
+          <ProjectDetail variants={projectsVariants} />
         </motion.div>
       </div>
     </div>
