@@ -11,7 +11,7 @@ export default function Contact() {
   const handlePost = () => {
     const payload = {
       email: email,
-      message: message,
+      desc: message,
     };
     const requestOptions = {
       method: "POST",
@@ -31,7 +31,7 @@ export default function Contact() {
           console.log(`Error 1: ${error}`);
           return Promise.reject(error);
         } else {
-          console.log(`Response: ${data}`);
+          console.log(data);
         }
       })
       .catch((err) => {
@@ -122,7 +122,11 @@ export default function Contact() {
                 Please type a message.
               </Form.Control.Feedback>
             </Form.Group>
-            <Button variant="primary" type="submit">
+            <Button
+              variant="primary"
+              type="submit"
+              onClick={(e) => handleSubmit(e)}
+            >
               Submit
             </Button>
           </Form>

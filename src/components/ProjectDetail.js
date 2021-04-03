@@ -1,7 +1,6 @@
 import Card from "react-bootstrap/Card";
-import Button from "react-bootstrap/Button";
+
 import projectsData from "./projectsData";
-import { motion } from "framer-motion";
 
 export default function ProjectDetail() {
   const projects = projectsData.map((p, i) => {
