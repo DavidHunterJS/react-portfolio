@@ -122,7 +122,7 @@ export default function Contact() {
                 Please type a message.
               </Form.Control.Feedback>
             </Form.Group>
-            <Button variant="primary" onClick={(e) => handleSubmit(e)}>
+            <Button variant="primary" type="submit">
               Submit
             </Button>
           </Form>
