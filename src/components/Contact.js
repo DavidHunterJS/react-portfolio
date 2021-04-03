@@ -78,7 +78,12 @@ export default function Contact() {
           animate="animate"
           exit="exit"
         >
-          <Form noValidate validated={validated} className="p-3">
+          <Form
+            noValidate
+            validated={validated}
+            className="p-3"
+            onSubmit={(e) => handleSubmit(e)}
+          >
             <Form.Text>
               <h2>Get in Touch</h2>
             </Form.Text>
@@ -122,11 +127,7 @@ export default function Contact() {
                 Please type a message.
               </Form.Control.Feedback>
             </Form.Group>
-            <Button
-              variant="primary"
-              type="submit"
-              onClick={(e) => handleSubmit(e)}
-            >
+            <Button variant="primary" type="submit">
               Submit
             </Button>
           </Form>
