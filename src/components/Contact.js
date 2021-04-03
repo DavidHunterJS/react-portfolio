@@ -24,7 +24,6 @@ export default function Contact() {
       "https://0rv13tkjb6.execute-api.us-west-2.amazonaws.com/api/contact";
     fetch(url, requestOptions)
       .then(async (response) => {
-        console.log(" Fetch Called ");
         const data = await response.json();
         if (!response.ok) {
           const error = (data && data.message) || response.status;
@@ -37,8 +36,6 @@ export default function Contact() {
       .catch((err) => {
         console.error(err);
       });
-
-    console.log("Submitted");
   };
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -47,9 +44,7 @@ export default function Contact() {
       e.stopPropagation();
     } else {
       setValidated(true);
-      console.log("Form Validated True");
       handlePost();
-      console.log("handlePost() Called");
     }
   };
   const contactVariants = {
