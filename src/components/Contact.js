@@ -84,7 +84,9 @@ export default function Contact() {
   return (
     <div className="image-container no-animation">
       <div className="static-bg overlay contact">
-        <div
+        <motion.div
+          variants={contactVariants}
+          exit="exit"
           id="toasty"
           aria-live="polite"
           aria-atomic="true"
@@ -114,7 +116,7 @@ export default function Contact() {
               Thanks {name}! Your message was successfully emailed to me.
             </Toast.Body>
           </Toast>
-        </div>
+        </motion.div>
         <motion.div
           variants={contactVariants}
           initial="initial"
