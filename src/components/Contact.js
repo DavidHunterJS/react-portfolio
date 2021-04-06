@@ -1,15 +1,29 @@
 import { useState } from "react";
+import { useHistory } from "react-router-dom";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
+import Toast from "react-bootstrap/Toast";
 import { motion } from "framer-motion";
 
 export default function Contact() {
   const [validated, setValidated] = useState(false);
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
+  const [name, setName] = useState("");
+  const [showToast, setShowToast] = useState(false);
+  const history = useHistory();
 
+  const handleFormReset = () => {
+    setTimeout(() => {
+      history.push("/contact");
+    }, 5000);
+  };
+  const handleShow = () => {
+    setShowToast(!showToast);
+  };
   const handlePost = () => {
     const payload = {
+      name: name,
       email: email,
       desc: message,
     };
@@ -31,6 +45,8 @@ export default function Contact() {
           return Promise.reject(error);
         } else {
           console.log(data);
+          handleShow();
+          handleFormReset();
         }
       })
       .catch((err) => {
@@ -47,6 +63,7 @@ export default function Contact() {
       handlePost();
     }
   };
+
   const contactVariants = {
     initial: { y: "-100vh" },
     animate: {
@@ -67,6 +84,37 @@ export default function Contact() {
   return (
     <div className="image-container no-animation">
       <div className="static-bg overlay contact">
+        <div
+          id="toasty"
+          aria-live="polite"
+          aria-atomic="true"
+          style={{
+            position: "absolute",
+            minHeight: "100px",
+          }}
+        >
+          <Toast
+            show={showToast}
+            style={{
+              position: "absolute",
+              top: 0,
+              right: 0,
+            }}
+          >
+            <Toast.Header>
+              <img
+                src="holder.js/20x20?theme=sky"
+                className="rounded mr-2"
+                alt=""
+              />
+              <strong className="mr-auto">Success</strong>
+              <small>just now</small>
+            </Toast.Header>
+            <Toast.Body>
+              Thanks {name}! Your message was successfully emailed to me.
+            </Toast.Body>
+          </Toast>
+        </div>
         <motion.div
           variants={contactVariants}
           initial="initial"
@@ -88,6 +136,22 @@ export default function Contact() {
                 with lightning speed
               </p>
             </Form.Text>
+            <Form.Group controlId="formBasicText">
+              <Form.Label srOnly>Your name</Form.Label>
+              <Form.Control
+                name="name"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+                required
+                type="text"
+                placeholder="Your Name"
+              />
+              <Form.Control.Feedback tooltip>Looks Good!</Form.Control.Feedback>
+              <Form.Control.Feedback type="invalid" tooltip>
+                Please enter your name.
+              </Form.Control.Feedback>
+            </Form.Group>
+
             <Form.Group controlId="formBasicEmail">
               <Form.Label srOnly>Your email address</Form.Label>
               <Form.Control
