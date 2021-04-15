@@ -19,7 +19,7 @@ export default function Projects() {
   };
   const headerVariants = {
     hide: { y: "-100vh" },
-    show: { y: 0, transition: { type: "ease", duration: 0.7 } },
+    show: { y: 0, transition: { type: "spring", damping: 20, mass: 2 } },
     exit: { y: "-100vh", transition: { duration: 1 } },
   };
 

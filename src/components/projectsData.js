@@ -17,8 +17,8 @@ export const projectsData = [
     title: "Journeys Website",
     description:
       "A website for a company that works with developmentally disabled adults",
-    demo: "https://davidhunter.io/journeys",
-    code: "http://134.209.55.246/journeys/",
+    demo: "http://134.209.55.246/journeys/",
+    code: "http://github.com/davidhunterjs/journeys/",
   },
   {
     key: 3,
