@@ -60,8 +60,7 @@ export default function Contact() {
       e.stopPropagation();
     } else {
       setValidated(true);
-      handleShow();
-      // handlePost();
+      handlePost();
     }
   };
   // LIVE FORM VALIDATION
