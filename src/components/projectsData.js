@@ -8,7 +8,7 @@ export const projectsData = [
     title: "Currency Converter",
     description:
       "Convert the world's currencies, automatically getting the latest exchange rates from the web",
-    demo: "https://currency-converter-ufane.ondigitalocean.app/",
+    demo: "https://currency.davidhunter.io",
     code: "https://github.com/davidhunterjs/currency-converter",
   },
   {
@@ -17,7 +17,7 @@ export const projectsData = [
     title: "Journeys Website",
     description:
       "A website for a company that works with developmentally disabled adults",
-    demo: "http://134.209.55.246/journeys/",
+    demo: "http://journeys.davidhunter.io",
     code: "http://github.com/davidhunterjs/journeys/",
   },
   {
