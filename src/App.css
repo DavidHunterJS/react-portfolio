@@ -178,3 +178,13 @@ a.resume-cta {
   height: 20px;
   
 }
+/* FORM VALIDATION TOOTIPS */
+.valid-tooltip {
+  right: 0;
+  left: inherit;
+}
+.invalid-tooltip {
+  right: 0;
+  left: inherit;
+}
+
