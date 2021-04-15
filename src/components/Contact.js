@@ -60,10 +60,41 @@ export default function Contact() {
       e.stopPropagation();
     } else {
       setValidated(true);
-      handlePost();
+      // handlePost();
     }
   };
+  // LIVE FORM VALIDATION
+  // THANKS stackoverflow.com/questions/43481237/bootstrap-4-form-validation
+  (() => {
+    "use strict";
+    window.addEventListener(
+      "load",
+      function () {
+        // fetch all the forms we want to apply custom style
+        const inputs = document.getElementsByClassName("formInput");
+        // loop over each input and watch blur event
+        const validation = Array.prototype.filter.call(inputs, (input) => {
+          console.log(inputs);
+          input.addEventListener(
+            "blur",
+            (event) => {
+              // reset
+              input.classList.remove("is-invalid");
+              input.classList.remove("is-valid");
 
+              if (input.checkValidity() === false) {
+                input.classList.add("is-invalid");
+              } else {
+                input.classList.add("is-valid");
+              }
+            },
+            false
+          );
+        });
+      },
+      false
+    );
+  })();
   const contactVariants = {
     initial: { y: "-100vh" },
     animate: {
@@ -123,6 +154,7 @@ export default function Contact() {
           animate="animate"
           exit="exit"
         >
+          {/* THE FORM STARTS HERE */}
           <Form
             onSubmit={(e) => handleSubmit(e)}
             noValidate
@@ -147,11 +179,12 @@ export default function Contact() {
                 required
                 type="text"
                 placeholder="Your Name"
+                className="formInput"
               />
-              <Form.Control.Feedback tooltip>Looks Good!</Form.Control.Feedback>
               <Form.Control.Feedback type="invalid" tooltip>
                 Please enter your name.
               </Form.Control.Feedback>
+              <Form.Control.Feedback tooltip>Looks Good!</Form.Control.Feedback>
             </Form.Group>
 
             <Form.Group controlId="formBasicEmail">
@@ -162,7 +195,9 @@ export default function Contact() {
                 onChange={(e) => setEmail(e.target.value)}
                 required
                 type="email"
+                pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
                 placeholder="Your email address"
+                className="formInput"
               />
               <Form.Control.Feedback tooltip>Looks Good!</Form.Control.Feedback>
               <Form.Control.Feedback type="invalid" tooltip>
@@ -181,6 +216,7 @@ export default function Contact() {
                 required
                 type="textarea"
                 placeholder="Type a message..."
+                className="formInput"
               />
               <Form.Control.Feedback tooltip>Looks Good!</Form.Control.Feedback>
               <Form.Control.Feedback type="invalid" tooltip>
