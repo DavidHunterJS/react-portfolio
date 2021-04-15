@@ -65,36 +65,19 @@ export default function Contact() {
   };
   // LIVE FORM VALIDATION
   // THANKS stackoverflow.com/questions/43481237/bootstrap-4-form-validation
-  (() => {
-    "use strict";
-    window.addEventListener(
-      "load",
-      function () {
-        // fetch all the forms we want to apply custom style
-        const inputs = document.getElementsByClassName("formInput");
-        // loop over each input and watch blur event
-        const validation = Array.prototype.filter.call(inputs, (input) => {
-          console.log(inputs);
-          input.addEventListener(
-            "blur",
-            (event) => {
-              // reset
-              input.classList.remove("is-invalid");
-              input.classList.remove("is-valid");
+  const handleValidate = (e) => {
+    const input = e.currentTarget;
+    //reset
+    input.classList.remove("is-invalid");
+    input.classList.remove("is-valid");
 
-              if (input.checkValidity() === false) {
-                input.classList.add("is-invalid");
-              } else {
-                input.classList.add("is-valid");
-              }
-            },
-            false
-          );
-        });
-      },
-      false
-    );
-  })();
+    if (input.checkValidity() === false) {
+      input.classList.add("is-invalid");
+    } else {
+      input.classList.add("is-valid");
+    }
+  };
+
   const contactVariants = {
     initial: { y: "-100vh" },
     animate: {
@@ -179,7 +162,7 @@ export default function Contact() {
                 required
                 type="text"
                 placeholder="Your Name"
-                className="formInput"
+                onBlur={handleValidate}
               />
               <Form.Control.Feedback type="invalid" tooltip>
                 Please enter your name.
@@ -197,7 +180,7 @@ export default function Contact() {
                 type="email"
                 pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
                 placeholder="Your email address"
-                className="formInput"
+                onBlur={handleValidate}
               />
               <Form.Control.Feedback tooltip>Looks Good!</Form.Control.Feedback>
               <Form.Control.Feedback type="invalid" tooltip>
@@ -216,7 +199,7 @@ export default function Contact() {
                 required
                 type="textarea"
                 placeholder="Type a message..."
-                className="formInput"
+                onBlur={handleValidate}
               />
               <Form.Control.Feedback tooltip>Looks Good!</Form.Control.Feedback>
               <Form.Control.Feedback type="invalid" tooltip>
