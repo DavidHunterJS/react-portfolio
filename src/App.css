@@ -140,6 +140,18 @@ a.resume-cta {
     margin-top: 2vh;
   }
 }
+.projectDetail {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 100vh;  
+}
+@media screen and (max-width: 768px ) {
+  .projectDetail {
+    margin-top: 20%;
+  }
+}
 /* CONTACT COMPONENT */
 .contact {
   display: flex;
@@ -158,13 +170,6 @@ a.resume-cta {
   position: relative;
 }
 
-.projectDetail {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
-  align-items: center;
-  height: 100vh;  
-}
 /* TOAST */
 #toasty {
   top: 15em;
@@ -187,4 +192,18 @@ a.resume-cta {
   right: 0;
   left: inherit;
 }
+/* TOAST STYLING */
+div.fade.toast.show {
+  position: fixed;
+  top: 28%;
+  left: 35%;
+  max-width: 500px;
+  background-color: #fff;
 
+}
+@media screen and (max-width: 768px ) {
+  div.fade.toast.show {
+    top: 20%;
+    left: 0;
+  }
+}

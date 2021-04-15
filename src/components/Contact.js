@@ -60,6 +60,7 @@ export default function Contact() {
       e.stopPropagation();
     } else {
       setValidated(true);
+      handleShow();
       // handlePost();
     }
   };
@@ -109,14 +110,7 @@ export default function Contact() {
             minHeight: "100px",
           }}
         >
-          <Toast
-            show={showToast}
-            style={{
-              position: "absolute",
-              top: 0,
-              right: 0,
-            }}
-          >
+          <Toast show={showToast}>
             <Toast.Header>
               <img
                 src="holder.js/20x20?theme=sky"
