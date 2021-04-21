@@ -1,6 +1,7 @@
 import currencies from "./img/currency2.jpg";
 import utorrent from "./img/utorrent3.png";
 import journeys from "./img/journeys.png";
+import scrimba from "./img/scrimba-form.webp";
 export const projectsData = [
   {
     key: 1,
@@ -20,13 +21,15 @@ export const projectsData = [
     demo: "http://journeys.davidhunter.io",
     code: "http://github.com/davidhunterjs/journeys/",
   },
+
   {
     key: 3,
-    image: utorrent,
-    title: "Tracker Collector",
-    description: "A curated list of public torrent trackers",
-    demo: "https://davidhunter.io/tracker-collector",
-    code: "https://github.com/davidhunterjs/tracker-collector",
+    image: scrimba,
+    title: "Scrimba Form",
+    description:
+      "A form I made using React and framer-motion for the Scrimba weekly web dev challenege.",
+    demo: "https://scrimba-form.davidhunter.io",
+    code: "https:// github.comdavidhunterjs/scrimba-form",
   },
 ];
 export default projectsData;
