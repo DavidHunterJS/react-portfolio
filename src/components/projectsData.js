@@ -1,6 +1,5 @@
 import currencies from "./img/currency2.jpg";
-import utorrent from "./img/utorrent3.png";
-import journeys from "./img/journeys.png";
+import journeys from "./img/journeys.gif";
 import scrimba from "./img/scrimba-form.webp";
 export const projectsData = [
   {
