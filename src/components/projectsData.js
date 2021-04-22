@@ -7,7 +7,7 @@ export const projectsData = [
     image: currencies,
     title: "Currency Converter",
     description:
-      "Convert the world's currencies, automatically getting the latest exchange rates from the web",
+      "React and Axios are to used to call an API and display exchange rates between currencies. -currently under construction-",
     demo: "https://currency.davidhunter.io",
     code: "https://github.com/davidhunterjs/currency-converter",
   },
@@ -16,7 +16,7 @@ export const projectsData = [
     image: journeys,
     title: "Journeys Website",
     description:
-      "A website for a company that works with developmentally disabled adults",
+      "A static website made with Sass, CoffeeScript, and Gulp.js that uses a Parallax Effect",
     demo: "http://journeys.davidhunter.io",
     code: "http://github.com/davidhunterjs/journeys/",
   },
@@ -26,7 +26,7 @@ export const projectsData = [
     image: scrimba,
     title: "Scrimba Form",
     description:
-      "A form I made using React and framer-motion for the Scrimba weekly web dev challenege.",
+      "A form created with React and framer-motion for the Scrimba Weekly Web Dev Challenege.",
     demo: "https://scrimba-form.davidhunter.io",
     code: "https:// github.comdavidhunterjs/scrimba-form",
   },
