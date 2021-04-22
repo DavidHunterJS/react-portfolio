@@ -40,7 +40,7 @@ export default function Home() {
           Solutions
         </motion.h1>
         <motion.a
-          href="%PUBLIC_URL%/David_Hunter_Resume_04.21.21.pdf"
+          href="/David_Hunter_Resume_04.21.21.pdf"
           target="_blank"
           rel="noopener noreferrer"
           key="a"
