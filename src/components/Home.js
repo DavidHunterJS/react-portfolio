@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import resume from "./img/David_Hunter_Resume_04.21.21.pdf";
 
 export default function Home() {
   const heroVariants = {
@@ -40,7 +41,7 @@ export default function Home() {
           Solutions
         </motion.h1>
         <motion.a
-          href="/David_Hunter_Resume_04.21.21.pdf"
+          href={resume}
           target="_blank"
           rel="noopener noreferrer"
           key="a"
