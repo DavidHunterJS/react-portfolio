@@ -20,7 +20,8 @@ export default function ProjectDetail() {
                 href={p.demo}
                 className="btn btn-primary btn-lg active"
                 role="button"
-                aria-pressed="true"
+                target="_blank"
+                rel="noopener noreferrer"
               >
                 Demo
               </a>
@@ -29,6 +30,8 @@ export default function ProjectDetail() {
                 className="btn btn-primary btn-lg active"
                 role="button"
                 aria-pressed="true"
+                target="_blank"
+                rel="noopener noreferrer"
               >
                 Code
               </a>
