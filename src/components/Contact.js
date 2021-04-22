@@ -141,20 +141,19 @@ export default function Contact() {
               <h2>Get in Touch</h2>
             </Form.Text>
             <Form.Text>
-              <p>
+              <p id="form-instruction-text">
                 Please fill out the quick form and I&apos;ll get back to you
                 with lightning speed
               </p>
             </Form.Text>
             <Form.Group controlId="formBasicText">
-              <Form.Label srOnly>Your name</Form.Label>
+              <Form.Label>Your name</Form.Label>
               <Form.Control
                 name="name"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
                 required
                 type="text"
-                placeholder="Your Name"
                 onBlur={handleValidate}
               />
               <Form.Control.Feedback type="invalid" tooltip>
@@ -164,7 +163,7 @@ export default function Contact() {
             </Form.Group>
 
             <Form.Group controlId="formBasicEmail">
-              <Form.Label srOnly>Your email address</Form.Label>
+              <Form.Label>Your email address</Form.Label>
               <Form.Control
                 name="email"
                 value={email}
@@ -172,7 +171,6 @@ export default function Contact() {
                 required
                 type="email"
                 pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
-                placeholder="Your email address"
                 onBlur={handleValidate}
               />
               <Form.Control.Feedback tooltip>Looks Good!</Form.Control.Feedback>
@@ -182,7 +180,7 @@ export default function Contact() {
             </Form.Group>
 
             <Form.Group controlId="formBasicTextarea">
-              <Form.Label srOnly>Readable text</Form.Label>
+              <Form.Label>Type a message</Form.Label>
               <Form.Control
                 name="message"
                 value={message}
@@ -191,7 +189,6 @@ export default function Contact() {
                 rows={3}
                 required
                 type="textarea"
-                placeholder="Type a message..."
                 onBlur={handleValidate}
               />
               <Form.Control.Feedback tooltip>Looks Good!</Form.Control.Feedback>

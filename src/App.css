@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital@0;1&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Material+Icons+Outlined');
 :root {
   --name-text: #86ddff;
@@ -206,4 +206,12 @@ div.fade.toast.show {
     top: 20%;
     left: 0;
   }
+}
+.form-label {
+  color: rgb(175, 174, 172);
+  margin: auto;
+}
+#form-instruction-text {
+  color: rgb(175, 174, 172);
+
 }
