@@ -1,6 +1,6 @@
 import currencies from "./img/currency2.jpg";
 import journeys from "./img/journeys.gif";
-import scrimba from "./img/scrimba-form.webp";
+import scrimba from "./img/scrimba-form.gif";
 export const projectsData = [
   {
     key: 1,
