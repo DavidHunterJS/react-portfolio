@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import resume from "./img/David_Hunter_Resume_04.21.21.pdf";
+import resume from "./img/David_Hunter_Resume.pdf";
 
 export default function Home() {
   const heroVariants = {
