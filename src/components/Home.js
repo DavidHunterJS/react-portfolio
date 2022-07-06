@@ -41,9 +41,10 @@ export default function Home() {
           Solutions
         </motion.h1>
         <motion.a
+          download
           href={resume}
-          // target="_blank"
-          // rel="noopener noreferrer"
+          target="_blank"
+          rel="noopener noreferrer"
           key="a"
           className="resume-cta"
           variants={resumeVariants}
