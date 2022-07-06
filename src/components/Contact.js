@@ -155,6 +155,7 @@ export default function Contact() {
                 required
                 type="text"
                 onBlur={handleValidate}
+                autoFocus
               />
               <Form.Control.Feedback type="invalid" tooltip>
                 Please enter your name.
