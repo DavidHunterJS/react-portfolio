@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
-import resume from "./img/David_Hunter_Resume.docx.zip";
+let resume =
+  "https://bytesizor.betty.bysh.me/nextcloud/index.php/s/zRtLCnNkXXbaPSm";
 
 export default function Home() {
   const heroVariants = {
