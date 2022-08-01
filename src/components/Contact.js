@@ -11,14 +11,17 @@ export default function Contact() {
   const [message, setMessage] = useState("");
   const [name, setName] = useState("");
   const [showToast, setShowToast] = useState(false);
+  const [isDisabled, setIsDisabled] = useState(false);
   const history = useHistory();
 
+  const disableButtonOnSubmit = () => setIsDisabled(true);
   const handleFormReset = () => {
     setTimeout(() => {
       history.push("/contact");
-    }, 5000);
+    }, 100);
   };
   const handleShow = () => {
+    disableButtonOnSubmit();
     setShowToast(!showToast);
   };
   const handlePost = () => {
@@ -197,7 +200,7 @@ export default function Contact() {
                 Please type a message.
               </Form.Control.Feedback>
             </Form.Group>
-            <Button variant="primary" type="submit">
+            <Button disabled={isDisabled} variant="primary" type="submit">
               Submit
             </Button>
           </Form>
