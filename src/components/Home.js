@@ -35,11 +35,9 @@ export default function Home() {
           animate="animate"
           exit="exit"
         >
-          <span className="firstWord">Solving</span>
+          <span className="firstWord">Full-Stack</span>
           <br />
-          Problems & Creating
-          <br />
-          Solutions
+          Javascript Devloper
         </motion.h1>
         <motion.a
           download

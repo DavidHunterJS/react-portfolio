@@ -1,6 +1,7 @@
 import currencies from "./img/currency-converter.gif";
 import journeys from "./img/journeys.gif";
 import portfolio from "./img/portfolio.gif";
+import drudge from "./img/drudge.jpg";
 export const projectsData = [
   {
     key: 1,
@@ -29,6 +30,15 @@ export const projectsData = [
       "This website is deployed to AWS Amplify, created with React-Router, Framer-Motion and Bootstrap; using an AWS Lambda backend for the form email.",
     demo: "http://davidhunter.io",
     code: "https://github.comdavidhunterjs/react-portfolio",
+  },
+  {
+    key: 4,
+    image: drudge,
+    title: "Drudge Reader",
+    description:
+      "A full stack javascript app that scrapes the drudge report website and displays the content in a more pleasing manner with real-time updates. The app was made using Express, Mongoose and Redux",
+    demo: "https://trippy.wtf",
+    code: "https://github.comdavidhunterjs/drudge-reader-server",
   },
 ];
 export default projectsData;
